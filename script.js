@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const moleculeTitle = document.getElementById("molecule-title");
     const moleculeDescription = document.getElementById("molecule-description");
 
+    
     function loadMolecule(type) {
         let moleculeFile = "";
         let title = "";
