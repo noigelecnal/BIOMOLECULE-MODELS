@@ -4,14 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    
-    
-    const stage = new NGL.Stage("molecule-viewer");
     const moleculeViewer = document.getElementById("molecule-viewer");
     const moleculeTitle = document.getElementById("molecule-title");
     const moleculeDescription = document.getElementById("molecule-description");
 
-    
+    // Ensure molecule viewer is visible before initializing WebGL
+    moleculeViewer.style.width = "600px";
+    moleculeViewer.style.height = "400px";
+
+    // Initialize NGL Stage **only once**
+    const stage = new NGL.Stage("molecule-viewer");
+
     function loadMolecule(type) {
         let moleculeFile = "";
         let title = "";
@@ -48,17 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
         moleculeTitle.textContent = title;
         moleculeDescription.textContent = description;
 
-        // Show viewer only after a selection is made
-        moleculeViewer.style.display = "block";
-        moleculeViewer.innerHTML = ""; // Clear previous model
-
-        // Remove old molecule before loading new one
+        // Clear old molecule before loading new one
         stage.removeAllComponents();
 
-        // Load the new molecule
-        stage.loadFile(moleculeFile, { defaultRepresentation: true }).then(function (component) {
-            component.autoView();
-        });
+        // Load the new molecule file
+        stage.loadFile(moleculeFile, { defaultRepresentation: true })
+            .then(function (component) {
+                component.autoView();
+            })
+            .catch(error => {
+                console.error("Failed to load molecule:", error);
+            });
+
+        // Resize after a small delay to ensure proper rendering
+        setTimeout(() => {
+            stage.handleResize();
+        }, 500);
     }
 
     // Attach event listeners for buttons
@@ -77,7 +85,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("protein-btn").addEventListener("click", function () {
         loadMolecule("protein");
     });
-
-    // Hide molecule viewer initially
-    moleculeViewer.style.display = "none";
 });
