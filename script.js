@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    if (typeof NGL === "undefined") {
+        console.error("NGL.js failed to load!");
+        return;
+    }
+
     const stage = new NGL.Stage("molecule-viewer");
 
     function loadMolecule(type) {
@@ -60,6 +65,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("protein-btn").addEventListener("click", function () {
-        loadMolecule("protein");
-    });
-});
