@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const moleculeTitle = document.getElementById("molecule-title");
     const moleculeDescription = document.getElementById("molecule-description");
 
+    
     // Ensure molecule viewer is visible before initializing WebGL
     moleculeViewer.style.width = "600px";
     moleculeViewer.style.height = "400px";
