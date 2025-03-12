@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    
     const stage = new NGL.Stage("molecule-viewer");
     const moleculeViewer = document.getElementById("molecule-viewer");
     const moleculeTitle = document.getElementById("molecule-title");
