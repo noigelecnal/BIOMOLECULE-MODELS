@@ -16,22 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
             case "carbohydrate":
                 moleculeFile = "https://files.rcsb.org/download/8WLB.pdb";
                 title = "Carbohydrates";
-                description = "Carbohydrates provide energy and serve as structural components.";
+                description = " Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides. Their stereochemistry affects function.
+";
                 break;
             case "lipid":
                 moleculeFile = "https://files.rcsb.org/download/1O7Q.pdb";
                 title = "Lipids";
-                description = "Lipids store energy and form cell membranes.";
+                description = "Form bilayers, micelles, or vesicles, with hydrophobic tails and hydrophilic heads, critical for membrane structure.
+";
                 break;
             case "nucleic_acid":
                 moleculeFile = "https://files.rcsb.org/download/6M0J.pdb";
                 title = "Nucleic Acids";
-                description = "Nucleic acids store and transmit genetic information.";
+                description = "DNA adopts a double-helix, while RNA forms varied structures (loops, stems) depending on function. Base pairing (A-T/U, G-C) is essential for stability.";
                 break;
             case "protein":
                 moleculeFile = "https://files.rcsb.org/download/2GTB.pdb";
                 title = "Proteins";
-                description = "Proteins perform enzymatic, structural, and transport functions.";
+                description = "Fold into complex structures (primary, secondary, tertiary, quaternary), stabilized by hydrogen bonds, ionic interactions, and hydrophobic forces.
+";
                 break;
             default:
                 title = "Select a Biomolecule";
