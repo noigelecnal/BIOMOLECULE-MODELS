@@ -5,7 +5,6 @@ html, body {
     overflow: hidden;
     height: 100%;
     font-family: Arial, sans-serif;
-    
 }
 
 /* Main layout */
@@ -53,8 +52,10 @@ html, body {
     justify-content: center;
 }
 
+/* Molecule viewer (hidden by default) */
 #molecule-viewer {
     width: 600px;
     height: 400px;
     border: 1px solid black;
+    display: none; /* Hides initially until a biomolecule is selected */
 }
