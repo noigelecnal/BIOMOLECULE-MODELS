@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide the molecule viewer initially
     moleculeViewer.style.display = "none"; 
 
+    
     // Start NGL stage
     const stage = new NGL.Stage("molecule-viewer");
 
