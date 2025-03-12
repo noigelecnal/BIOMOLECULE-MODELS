@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomolecule Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/ngl"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h2>Biomolecules</h2>
+            <button id="carbohydrate-btn">Carbohydrates</button>
+            <button id="lipid-btn">Lipids</button>
+            <button id="nucleic-acid-btn">Nucleic Acids</button>
+            <button id="protein-btn">Proteins</button>
+        </div>
+        
+        <div id="content">
+            <h1 id="molecule-title">Select a Biomolecule</h1>
+            <p id="molecule-description">Click a button to learn about the biomolecule.</p>
+            <div id="molecule-viewer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
