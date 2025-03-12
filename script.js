@@ -8,12 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const moleculeTitle = document.getElementById("molecule-title");
     const moleculeDescription = document.getElementById("molecule-description");
 
-    
-    // molecule viewr shuld work here
-    moleculeViewer.style.width = "600px";
-    moleculeViewer.style.height = "400px";
+    // Hide the molecule viewer initially
+    moleculeViewer.style.display = "none"; 
 
-    // start ngl stahge
+    // Start NGL stage
     const stage = new NGL.Stage("molecule-viewer");
 
     function loadMolecule(type) {
@@ -48,14 +46,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
         }
 
-        
+        // Show the molecule viewer when a molecule is selected
+        moleculeViewer.style.display = "block";
+
+        // Update UI
         moleculeTitle.textContent = title;
         moleculeDescription.textContent = description;
 
-       
+        // Clear previous molecule before loading a new one
         stage.removeAllComponents();
 
-        
+        // Load the new molecule
         stage.loadFile(moleculeFile, { defaultRepresentation: true })
             .then(function (component) {
                 component.autoView();
@@ -64,13 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Failed to load molecule:", error);
             });
 
-        //
+        // Resize WebGL canvas after loading
         setTimeout(() => {
             stage.handleResize();
         }, 500);
     }
 
-    // legion was here
+    // Attach event listeners for buttons
     document.getElementById("carbohydrate-btn").addEventListener("click", function () {
         loadMolecule("carbohydrate");
     });
@@ -83,7 +84,4 @@ document.addEventListener("DOMContentLoaded", function () {
         loadMolecule("nucleic_acid");
     });
 
-    document.getElementById("protein-btn").addEventListener("click", function () {
-        loadMolecule("protein");
-    });
-});
+    document.getElement
