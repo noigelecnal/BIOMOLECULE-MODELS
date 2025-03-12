@@ -65,3 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("protein-btn").addEventListener("click", function () {
+        loadMolecule("protein");
+    });
+});
