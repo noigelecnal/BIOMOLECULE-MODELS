@@ -1,4 +1,4 @@
-/* Remove scrolling */
+/* Prevent scrolling */
 html, body {
     margin: 0;
     padding: 0;
@@ -8,7 +8,6 @@ html, body {
 }
 
 /* Main layout */
-
 #container {
     display: flex;
     height: 100vh;
@@ -53,10 +52,10 @@ html, body {
     justify-content: center;
 }
 
-/* Molecule viewer (hidden by default) */
+/* Molecule viewer */
 #molecule-viewer {
     width: 600px;
     height: 400px;
     border: 1px solid black;
-    display: none; /* Hides initially until a biomolecule is selected */
+    background-color: #f8f8f8;
 }
