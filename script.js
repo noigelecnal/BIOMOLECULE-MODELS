@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const moleculeDescription = document.getElementById("molecule-description");
 
     
-    // Ensure molecule viewer is visible before initializing WebGL
+    // molecule viewr shuld work here
     moleculeViewer.style.width = "600px";
     moleculeViewer.style.height = "400px";
 
-    // Initialize NGL Stage **only once**
+    // start ngl stahge
     const stage = new NGL.Stage("molecule-viewer");
 
     function loadMolecule(type) {
@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
         }
 
-        // Update UI
+        
         moleculeTitle.textContent = title;
         moleculeDescription.textContent = description;
 
-        // Clear old molecule before loading new one
+       
         stage.removeAllComponents();
 
-        // Load the new molecule file
+        
         stage.loadFile(moleculeFile, { defaultRepresentation: true })
             .then(function (component) {
                 component.autoView();
@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Failed to load molecule:", error);
             });
 
-        // Resize after a small delay to ensure proper rendering
+        //
         setTimeout(() => {
             stage.handleResize();
         }, 500);
     }
 
-    // Attach event listeners for buttons
+    // legion was here
     document.getElementById("carbohydrate-btn").addEventListener("click", function () {
         loadMolecule("carbohydrate");
     });
