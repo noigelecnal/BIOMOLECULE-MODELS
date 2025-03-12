@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("NGL.js failed to load!");
         return;
     }
+    
 
     const stage = new NGL.Stage("molecule-viewer");
 
