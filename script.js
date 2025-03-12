@@ -84,5 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("nucleic-acid-btn").addEventListener("click", function () {
         loadMolecule("nucleic_acid");
     });
+    
+    document.getElementById("protein-btn").addEventListener("click", function () {
+        loadMolecule("protein");
+    });
 }); 
     document.getElement
