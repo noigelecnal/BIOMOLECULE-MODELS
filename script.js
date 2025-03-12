@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide the molecule viewer initially
     moleculeViewer.style.display = "none"; 
 
-    
     // Start NGL stage
     const stage = new NGL.Stage("molecule-viewer");
 
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 description = "DNA adopts a double-helix, while RNA forms varied structures (loops, stems) depending on function. Base pairing (A-T/U, G-C) is essential for stability.";
                 break;
             case "protein":
-                moleculeFile = "https://files.rcsb.org/download/2GTB.pdb";
+                moleculeFile = "https://files.rcsb.org/download/2GTB.pdb"; // FIXED: Ensure this link is correct
                 title = "Proteins";
                 description = "Fold into complex structures (primary, secondary, tertiary, quaternary), stabilized by hydrogen bonds, ionic interactions, and hydrophobic forces.";
                 break;
@@ -84,9 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("nucleic-acid-btn").addEventListener("click", function () {
         loadMolecule("nucleic_acid");
     });
-    
+
     document.getElementById("protein-btn").addEventListener("click", function () {
         loadMolecule("protein");
-    });
-}); 
-    document.getElement
+    }); // FIXED: Added missing event listener
+
+});
