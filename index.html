@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomolecule Viewer</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/ngl@0.10.4/dist/ngl.min.js"></script>
+    <script src="ngl.min.js"></script> 
+    
 </head>
 <body>
-    
 
     <div id="container">
         <div id="sidebar">
@@ -18,21 +17,76 @@
             <button id="lipid-btn">Lipids</button>
             <button id="nucleic-acid-btn">Nucleic Acids</button>
             <button id="protein-btn">Proteins</button>
-            <h2>QUESTIONS</h2>
-            <button id="Question-two">Question 2</button>
-            <button id="Question-three">Question 3</button>
-            <button id="Question-four">Question 4</button>
-            <button id=">Question-five">Question 5</button>
-    
+            <h2>QUESTIONS</h2> 
+            <button id="question-2">Question 2</button> 
+            <button id="question-3">Question 3</button>
+            <button id="question-4">Question 4</button>
+            <button id="question-5">Question 5</button>
         </div>
         
         <div id="content">
             <h1 id="molecule-title">Select a Biomolecule</h1>
             <p id="molecule-description">Click a button to learn about the biomolecule.</p>
-            <div id="molecule-viewer"></div> <!-- didnt worlk -->
+            <div id="molecule-viewer"></div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function showQuestion(questionText, answerText, imagePlaceholder = false) {
+                document.getElementById("molecule-title").textContent = questionText;
+                document.getElementById("molecule-description").innerHTML = answerText;
+                document.getElementById("molecule-viewer").style.display = "none";
+                document.getElementById("question-content").style.display = "block";
+                document.getElementById("question-content").innerHTML = answerText;
+                
+                if (imagePlaceholder) {
+                    document.getElementById("question-content").innerHTML += '<div class="image-placeholder">[Insert Image Here]</div>';
+                }
+            }
+
+            function addEventListenerById(id, question, answer, hasImage = false) {
+                document.getElementById(id).addEventListener("click", function () {
+                    showQuestion(question, answer, hasImage);
+                });
+            }
+
+            addEventListenerById("question-2", "How do computer models help in visualizing the structure of biomolecules?", `
+                <ul>
+                    <li>Allow zooming, rotating, and highlighting molecular interactions.</li>
+                    <li>Help show bond angles, folding patterns, and active sites in proteins.</li>
+                    <li>Can simulate molecular dynamics (how a biomolecule moves).</li>
+                    <li>Provide a clearer understanding of function and interactions.</li>
+                </ul>`);
+
+            addEventListenerById("question-3", "What is the significance of the molecular shape in the function of biomolecules?", `
+                <ul>
+                    <li>Enzyme specificity: The active site must match the substrate (lock-and-key).</li>
+                    <li>DNA stability: The double helix protects genetic information.</li>
+                    <li>Membrane structure: Phospholipid bilayers form selectively permeable barriers.</li>
+                    <li>Protein interactions: Shape determines how proteins bind to other molecules.</li>
+                </ul>`);
+
+            addEventListenerById("question-4", "How do 3D molecular models assist scientists in research and drug development?", `
+                <ul>
+                    <li>Help visualize how drugs bind to target proteins (e.g., enzyme inhibitors).</li>
+                    <li>Predict mutations’ effects on protein function.</li>
+                    <li>Aid in designing new drugs by testing molecular docking.</li>
+                    <li>Allow customization of molecules for better effectiveness.</li>
+                </ul>`);
+
+            addEventListenerById("question-5", "What software tools or applications are commonly used to create 3D models of biomolecules?", `
+                <ul>
+                    <li><strong>NGL Viewer</strong> – Interactive web-based molecular viewer (The one we're using).</li>
+                    <li><strong>PyMOL</strong> – Used for high-quality molecular rendering.</li>
+                    <li><strong>Chimera</strong> – Advanced visualization for proteins and nucleic acids.</li>
+                    <li><strong>Jmol</strong> – Java-based molecular visualization tool.</li>
+                    <li><strong>SwissSidechain & Autodock</strong> – Drug discovery and molecular docking simulations.</li>
+                </ul>`, true);
+        });
+    </script>
+
 </body>
 </html>
