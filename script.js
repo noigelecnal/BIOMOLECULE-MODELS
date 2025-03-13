@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case "lipid":
                 moleculeFile = "https://files.rcsb.org/ligands/download/TGL.cif"; //
                 title = "Lipids";
-                description = "Form bilayers, micelles, or vesicles, with hydrophobic tails and hydrophilic heads, critical for membrane structure.";
+                description = "Triglycerides are the main form of fat storage in the body, consisting of glycerol and three fatty acid chains. They serve as a major energy source and are stored in adipose tissue.";
                 break;
             case "nucleic_acid":
                 moleculeFile = "https://files.rcsb.org/download/1BNA.pdb";
