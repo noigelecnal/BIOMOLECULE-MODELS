@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         switch (type) {
             case "carbohydrate":
-                moleculeFile = "https://files.rcsb.org/download/2C4W.pdb";
+                moleculeFile = "https://files.rcsb.org/download/5EID.pdb"; //finally a correct one 
                 title = "Carbohydrates";
                 description = "Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides. Their stereochemistry affects function.";
                 break;
             case "lipid":
-                moleculeFile = "https://files.rcsb.org/download/1LN3.pdb";
+                moleculeFile = "https://files.rcsb.org/download/1HVV.pdb"; //
                 title = "Lipids";
                 description = "Form bilayers, micelles, or vesicles, with hydrophobic tails and hydrophilic heads, critical for membrane structure.";
                 break;
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 description = "DNA adopts a double-helix, while RNA forms varied structures (loops, stems) depending on function. Base pairing (A-T/U, G-C) is essential for stability.";
                 break;
             case "protein":
-                moleculeFile = "https://files.rcsb.org/download/2GTB.pdb"; // FIXED: Ensure this link is correct
+                moleculeFile = "https://files.rcsb.org/download/2GTB.pdb"; // 
                 title = "Proteins";
                 description = "Fold into complex structures (primary, secondary, tertiary, quaternary), stabilized by hydrogen bonds, ionic interactions, and hydrophobic forces.";
                 break;
