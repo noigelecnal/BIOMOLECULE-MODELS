@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         switch (type) {
             case "carbohydrate":
-                moleculeFile = "https://files.rcsb.org/download/8WLB.pdb";
+                moleculeFile = "https://files.rcsb.org/download/2C4W.pdb";
                 title = "Carbohydrates";
                 description = "Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides. Their stereochemistry affects function.";
                 break;
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 description = "Form bilayers, micelles, or vesicles, with hydrophobic tails and hydrophilic heads, critical for membrane structure.";
                 break;
             case "nucleic_acid":
-                moleculeFile = "https://files.rcsb.org/download/6M0J.pdb";
+                moleculeFile = "https://files.rcsb.org/download/1BNA.pdb";
                 title = "Nucleic Acids";
                 description = "DNA adopts a double-helix, while RNA forms varied structures (loops, stems) depending on function. Base pairing (A-T/U, G-C) is essential for stability.";
                 break;
