@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 description = "Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides. Their stereochemistry affects function.";
                 break;
             case "lipid":
-                moleculeFile = "https://files.rcsb.org/download/1HVV.pdb"; //
+                moleculeFile = "https://files.rcsb.org/ligands/download/TGL.cif"; //
                 title = "Lipids";
                 description = "Form bilayers, micelles, or vesicles, with hydrophobic tails and hydrophilic heads, critical for membrane structure.";
                 break;
