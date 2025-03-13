@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof NGL === "undefined") {
-        console.error("NGL.js failed to load!");
+        console.error("epic ngl fail");
         return;
     }
 
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const moleculeTitle = document.getElementById("molecule-title");
     const moleculeDescription = document.getElementById("molecule-description");
 
-    // Hide the molecule viewer initially
-    moleculeViewer.style.display = "none"; 
+  
+    moleculeViewer.style.display = "none";
 
-    // Start NGL stage
+    
     const stage = new NGL.Stage("molecule-viewer");
 
     function loadMolecule(type) {
@@ -19,60 +19,57 @@ document.addEventListener("DOMContentLoaded", function () {
         let title = "";
         let description = "";
 
-        
         switch (type) {
             case "carbohydrate":
-                moleculeFile = "https://files.rcsb.org/download/2KQO.pdb"; //finally a correct one 
+                moleculeFile = "https://files.rcsb.org/download/2kqo.pdb"; // pati ito
                 title = "Carbohydrates";
-                description = "Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides. Their stereochemistry affects function.";
+                description = "Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides.";
                 break;
             case "lipid":
-                moleculeFile = "https://files.rcsb.org/ligands/download/TGL.cif"; //
+                moleculeFile = "https://files.rcsb.org/ligands/download/TGL.cif"; //correct daw sabe
                 title = "Lipids";
                 description = "Triglycerides are the main form of fat storage in the body, consisting of glycerol and three fatty acid chains. They serve as a major energy source and are stored in adipose tissue.";
                 break;
             case "nucleic_acid":
-                moleculeFile = "https://files.rcsb.org/download/1BNA.pdb";
+                moleculeFile = "https://files.rcsb.org/download/1bna.pdb"; // ts pmo
                 title = "Nucleic Acids";
-                description = "DNA adopts a double-helix, while RNA forms varied structures (loops, stems) depending on function. Base pairing (A-T/U, G-C) is essential for stability.";
+                description = "DNA adopts a double-helix, RNA forms varied structures.";
                 break;
             case "protein":
-                moleculeFile = "https://files.rcsb.org/download/2GTB.pdb"; // 
+                moleculeFile = "https://files.rcsb.org/download/2gtb.pdb"; // ang lag 
                 title = "Proteins";
-                description = "Fold into complex structures (primary, secondary, tertiary, quaternary), stabilized by hydrogen bonds, ionic interactions, and hydrophobic forces.";
+                description = "Fold into complex structures, stabilized by hydrogen bonds and interactions.";
                 break;
             default:
-                title = "Select a Biomolecule";
-                description = "Click a button to learn about the biomolecule.";
                 return;
         }
 
-        // Show the molecule viewer when a molecule is selected
+        
         moleculeViewer.style.display = "block";
 
-        // Update UI
+      
         moleculeTitle.textContent = title;
         moleculeDescription.textContent = description;
 
-        // Clear previous molecule before loading a new one
+        
         stage.removeAllComponents();
 
-        // Load the new molecule
+     
         stage.loadFile(moleculeFile, { defaultRepresentation: true })
             .then(function (component) {
                 component.autoView();
             })
-            .catch(error => {
-                console.error("Failed to load molecule:", error);
+            .catch(function (error) {
+                console.error("epic molecule loading fail ", error);
             });
 
-        // Resize WebGL canvas after loading
+        
         setTimeout(() => {
             stage.handleResize();
         }, 500);
     }
-
-    // Attach event listeners for buttons
+<script src="script.js"></script> 
+  
     document.getElementById("carbohydrate-btn").addEventListener("click", function () {
         loadMolecule("carbohydrate");
     });
@@ -87,6 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("protein-btn").addEventListener("click", function () {
         loadMolecule("protein");
-    }); // FIXED: Added missing event listener
+    });
 
 });
