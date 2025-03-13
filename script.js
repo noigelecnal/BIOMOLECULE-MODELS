@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         switch (type) {
             case "carbohydrate":
-                moleculeFile = "https://files.rcsb.org/download/5EID.pdb"; //finally a correct one 
+                moleculeFile = "https://files.rcsb.org/download/2KQO.pdb"; //finally a correct one 
                 title = "Carbohydrates";
                 description = "Exist in ring or linear forms, with glycosidic linkages connecting monosaccharides. Their stereochemistry affects function.";
                 break;
