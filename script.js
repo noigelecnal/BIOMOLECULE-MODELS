@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stage.handleResize();
         }, 500);
     }
-<script src="script.js"></script> 
+
   
     document.getElementById("carbohydrate-btn").addEventListener("click", function () {
         loadMolecule("carbohydrate");
