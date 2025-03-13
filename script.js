@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let title = "";
         let description = "";
 
+        
         switch (type) {
             case "carbohydrate":
                 moleculeFile = "https://files.rcsb.org/download/2KQO.pdb"; //finally a correct one 
